@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Finlandica', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F8F9FA;
+}
+
+
+.navbar-brand {
+    font-size: 25px;
+
+}
+
+.navcheck {
+    padding-right: calc(var(--bs-gutter-x) * .05);
+    padding-left: calc(var(--bs-gutter-x) * .05);
+}
+
+.navbar-nav {
+    margin-left: 35px;
+}
+
+.btn {
+    background-color: #e23e64;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #f34971;
+    border: none;
+}
+
+a,
+span {
+    color: #212529;
+}
+
+.myntra-color {
+    background-color: #e23e64;
+}
+
+.activebar{
+    border-bottom: 1px solid #e23e64;
+}

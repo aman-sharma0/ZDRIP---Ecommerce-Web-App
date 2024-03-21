@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% load static %} {% block "main" %}
+
+<!--Cart-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 shadow">
+      <div class="mt-5 p-3">
+        <h4>Customer details and Product details</h4>
+
+        <p><strong>Customer Name:</strong> Aman Sharma</p>
+        <p><strong>Customer Email ID:</strong> amansharma505152@gmail.com</p>
+        <p><strong>Customer Mobile:</strong> 9596637813</p>
+      </div>
+    </div>
+
+    <div class="col-md-3 shadow">
+      <div class="mt-3 p-3">
+        <h4>Price details</h4>
+        <hr />
+        <p><strong>Price({{ n }}):</strong> {{ tot }}</p>
+        <p><strong>Total Amount:</strong> Rs. {{tot}}</p>
+        <a href="/placeorder" class="anchor"
+          ><button class="btn btn-primary">Place Order</button></a
+        >
+      </div>
+    </div>
+
+    <div class="mt-3 p-2 myntra-color shadow">
+      <h4>Order Summery</h4>
+    </div>
+
+    <div class="mt-3 p-3">
+      <div class="row">
+        {% for i in data %}
+        <div class="col-md-4 shadow">
+          <img
+            src="/static/images/Butterfly beige sweatshirt.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+        </div>
+
+        <div class="col-md-8 shadow">
+          <p><strong>Product Name:</strong>{{ i.pid.name }}</p>
+          <p><strong>Category:</strong> {{ i.pid.category }}</p>
+          <p><strong>Price:</strong> {{ i.pid.price }}</p>
+          <a href="/remove/{{i.id}}" class="anchor"
+            ><button class="btn btn-sm btn-danger">Remove &#10006;</button></a
+          >
+          <a href="/updateqty/1/{{i.id}}" class="anchor"
+            ><button class="btn btn-sm btn-success">+</button></a
+          >
+          <input type="textarea" value = "{{i.qty}}">
+          <a href="/updateqty/2/{{i.id}}" class="anchor"
+            ><button class="btn btn-sm btn-danger">-</button></a
+          >
+        
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock "main" %}

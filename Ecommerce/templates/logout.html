@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/utility.css' %}" />
+    <title>Logout Page</title>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col-md-4 mt-5 mx-auto shadow p-5 mb-5 bg-body-tertiary rounded">
+          <h2 class="text-center">Logout</h2>
+
+          <p class="text-center">Are you sure you want to logout?</p>
+
+          <div class="text-center">
+            <a href="{% url 'login' %}" class="btn btn-danger mt-3">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+  </body>
+</html>

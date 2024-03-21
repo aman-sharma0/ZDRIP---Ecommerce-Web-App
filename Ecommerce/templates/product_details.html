@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% load static %} {% block "main" %}
+
+<!-- PRODUCT DETAILS -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 mt-5 mx-auto">
+      {% if msg_success %}
+        <div class="alert alert-success">{{msg_success}}</div>
+      {% endif %}
+      {% if msg_alert %}
+        <div class="alert alert-success">{{msg_alert}}</div>
+      {% endif %}
+      <div class="row">
+          {% for i in data %}
+        <div class="col-md-7">
+          <img
+            src="{{i.img.url}}"
+            alt="product"
+            class="card-img-top img-fluid rounded"
+          />
+        </div>
+
+        <div class="col-md-5">
+          <p><strong>Product Name:</strong>{{ i.name }}</p>
+          <p><strong>Category:</strong>{{ i.category }}</p>
+          <p><strong>Price:</strong> {{ i.price }}</p>
+          <p><strong>Fabric:</strong>{{ i.product_details }}</p>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 mb-2">
+                <a href="/cart/{{ i.id }}" class="btn btn-danger btn-block">Add to Cart</a>
+              </div>
+              <div class="col-md-4 mb-2">
+                <a href="/viewcart" class="btn btn-danger btn-block">View Cart</a>
+              </div>
+              <div class="col-md-4 mb-2">
+                <a href="/home" class="btn btn-danger btn-block">Shop More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock "main" %}
